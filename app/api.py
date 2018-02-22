@@ -4,6 +4,7 @@ from flask_restful import Resource, Api
 from json import dumps
 from flask_jsonpify import jsonify
 import socket
+import flask_restful
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ api = Api(app)
 method = socket.gethostname()
 @app.route('/')
 def api_root():
-    return 'Welcome'
+     return jsonify({'hello': 'world'})
 
 
 @app.route('/hello/<nameid>')
