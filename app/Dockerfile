@@ -8,7 +8,7 @@ RUN apt-get install -y python-pip python-dev build-essential
 ADD api.py /
 
 RUN pip install pystrich
-RUN pip install flask flask-jsonpify flask-restful
+RUN pip install flask flask-jsonpify flask-restful flask_restful requests
 RUN pip freeze
 CMD [ "python", "./api.py" ]
 
