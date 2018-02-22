@@ -10,6 +10,12 @@ pipeline {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
+      steps {
+        sh """
+        git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+        git fetch --all
+        """ 
+      }
     }
     stage('App tests') {
     steps {
