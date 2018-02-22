@@ -7,7 +7,9 @@ import sys
 import socket
 import api
 
-firstarg = sys.argv.pop()
+#firstarg = sys.argv.pop()
+
+firstarg = 'bill'
 
 method = socket.gethostname()
 
